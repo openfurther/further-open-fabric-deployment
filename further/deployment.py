@@ -27,7 +27,7 @@ import re
 def deployFurtherCore(environment):
 	"""Deploy further-core to a given environment where environment is represented as a folder with configuration. This command is meant to be run locally"""
 	version = prompt("FURTHeR version to deploy?")
-	config = _load_configuration(environment, 'further-core.ini')
+	config = _load_configuration(environment, 'further-core.cfg')
 	config['version'] = version
 	_replace_tokens('further-core/' + environment, config)
 	_deploy_further_configuration(environment)
@@ -35,7 +35,7 @@ def deployFurtherCore(environment):
 def deployFurtherI2b2(environment):
 	"""Deploy further-core to a given environment where environment is represented as a folder with configuration. This command is meant to be run locally"""
 
-	config = _load_configuration(environment, 'further-i2b2.ini')
+	config = _load_configuration(environment, 'further-i2b2.cfg')
 	_replace_tokens('further-i2b2/' + environment, config)
 	_deploy_i2b2_configuration(environment)
 	_deploy_further_i2b2_hook(environment)
