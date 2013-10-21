@@ -79,7 +79,7 @@ def _deploy_further_i2b2_hook(environment):
 		local('rm -rf lib/core-*')
 		local('rm -rf lib/i2b2-hook-further*')
 		local('rm -rf lib/slf4j-*')
-		local('rm -rf fqe-ds-api*')
+		local('rm -rf lib/fqe-ds-api*')
 		
 	with lcd('$SRC_HOME/i2b2-hook/i2b2-hook-further/target'):
 		tmp_dir = 'hook-tmp'
