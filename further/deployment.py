@@ -52,7 +52,8 @@ def _deploy_i2b2_configuration(environment):
 			with lcd('edu.harvard.i2b2.crc.loader'):
 				local('cp CRCLoaderApplicationContext.xml $JBOSS_HOME/server/default/conf/crcloaderapp')
 			with lcd('edu.harvard.i2b2.ontology'):
-				local('cp *-ds.xml $JBOSS_HOME/server/default/deploy')
+				local('cp OntologyApplicationContext.xml $JBOSS_HOME/server/default/conf/ontologyapp')
+				local('cp ontology.properties $JBOSS_HOME/server/default/conf/ontologyapp')
 			with lcd('edu.harvard.i2b2.pm'):
 				with lcd('database'):
 					local('cp hibernate.properties $TOMCAT_HOME/webapps/gridsphere/WEB-INF/CustomPortal/database')
